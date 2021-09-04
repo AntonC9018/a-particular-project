@@ -9,10 +9,16 @@ namespace SomeProject.Hexagon
         
         private Camera _camera;
         private Vector2 _startingMouseWorldPosition;
-
+        private GameObject _lastHitObject;
+        private MaterialPropertyBlock _resetBlock;
+        private MaterialPropertyBlock _highlightBlock;
 
         private void Start()
         {
+            _resetBlock = new MaterialPropertyBlock();
+            _highlightBlock = new MaterialPropertyBlock();
+            _resetBlock.SetFloat("_IsSelected", 0);
+            _highlightBlock.SetFloat("_IsSelected", 5);
             _camera = Camera.main;
         }
 
@@ -23,7 +29,18 @@ namespace SomeProject.Hexagon
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                // Do the hex things
+                var hitObject = hit.collider.gameObject;
+                if (hitObject != _lastHitObject)
+                {
+                    _lastHitObject?.GetComponent<MeshRenderer>().SetPropertyBlock(_resetBlock);
+                    hitObject.GetComponent<MeshRenderer>().SetPropertyBlock(_highlightBlock);
+                    _lastHitObject = hitObject;
+                }
+            }
+            else if (_lastHitObject != null)
+            {
+                _lastHitObject.GetComponent<MeshRenderer>().SetPropertyBlock(_resetBlock);
+                _lastHitObject = null;
             }
 
 

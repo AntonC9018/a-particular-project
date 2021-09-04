@@ -35,12 +35,16 @@ Shader "Custom/HexShader"
         // #pragma instancing_options assumeuniformscaling
         UNITY_INSTANCING_BUFFER_START(Props)
             // put more per-instance properties here
+            UNITY_DEFINE_INSTANCED_PROP(float, _IsSelected)
         UNITY_INSTANCING_BUFFER_END(Props)
 
         void surf (Input IN, inout SurfaceOutputStandard output)
         {
             // Albedo comes from a texture tinted by color
             fixed4 color = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+            int isSelected = UNITY_ACCESS_INSTANCED_PROP(Props, _IsSelected);
+            color *= (isSelected + 1);
+
             output.Albedo = color.rgb;
             // Metallic and smoothness come from slider variables
             output.Metallic = _Metallic;

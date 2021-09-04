@@ -1,3 +1,5 @@
+using System.Linq;
+using EngineCommon;
 using Kari.Plugins.Terminal;
 using UnityEngine;
 
@@ -59,7 +61,9 @@ namespace SomeProject.Hexagon
             var gm = new GameObject();
             var filter = gm.AddComponent<MeshFilter>();
             var renderer = gm.AddComponent<MeshRenderer>();
-            filter.mesh = MakeHexMesh();
+            var mesh = MakeHexMesh();
+            filter.mesh = mesh;
+            gm.AddComponent<MeshCollider>();
             return gm;
         }
 

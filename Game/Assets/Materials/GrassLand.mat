@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassLand
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 386691f1e08942b459f9ca38e3a51bc0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -75,4 +75,5 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0.6037736, b: 0.03475031, a: 1}
     - _EmissionColor: {r: 0.21223079, g: 0.21223079, b: 0.21223079, a: 1}
+    - _MultColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
