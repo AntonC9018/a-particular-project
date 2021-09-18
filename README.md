@@ -3,7 +3,7 @@
 ## Required programs:
 
 - Unity ver 2020.3 LTS, download via Unity Hub: https://unity.com/download
-- GitHub Desktop for easy version control: https://desktop.github.com/
+- GitHub Desktop for easy version control (optional): https://desktop.github.com/
 - Git for version control via console: https://git-scm.com/
 - Git LFS for work with big files: https://git-lfs.github.com/
 - Python 3, needed to run the custom build script.
