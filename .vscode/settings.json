@@ -8,7 +8,7 @@
         "**/*.user":true,
         "**/*.userprefs":true,
         "**/*.unityproj":true,
-        "**/*.exe":true,
+        "**/*.exe":false,
         "**/*.pdf":true,
         "**/*.mid":true,
         "**/*.midi":true,

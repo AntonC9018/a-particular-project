@@ -1,0 +1,1 @@
+nuget restore packages.game.config -Source kariTestSource -PackagesDirectory .

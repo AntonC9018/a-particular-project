@@ -62,3 +62,12 @@ It may be convenient to have a single master solution file that combined both th
 - Select one of the 'accept' options that have popped up in the Unity Editor.
 
 Now, breakpoints should work.
+
+
+### Current TODOs:
+
+1. test to see if code generation works. +
+2. rewrite python cli in D.
+3. automate Kari building + installing packages from local feed. I know the local feed is a terrible way to iterate.
+   - For first, the plugin versions must match exactly, but they are incremented with every commit.
+   - For second, you need to rebuild everything which is slow as heck, then manually delete and restore the plugins in the plugin folder, then call Kari again. This should be smarter, but I think I also should look into different build systems, perhaps a standardized way to pass a list of files to my Kari.
