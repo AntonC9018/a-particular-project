@@ -5,17 +5,14 @@
 - Unity ver 2020.3 LTS, download via Unity Hub: https://unity.com/download
 - GitHub Desktop for easy version control (optional): https://desktop.github.com/
 - Git for version control via console: https://git-scm.com/
-- Git LFS for work with big files: https://git-lfs.github.com/
-- Python 3, needed to run the custom build script.
-- .NET Core 3.1 SDK, needed to compile and run the code generator.
+- Git LFS for working with big files: https://git-lfs.github.com/
+- A D compiler, needed to run the custom build script: https://dlang.org/download.html
+- .NET Core 6 SDK, needed to compile and run the code generator: https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+- Install CMake: https://cmake.org/download/
+- Install Meson: https://mesonbuild.com/Getting-meson.html
+- To install Meson, you'll need to install Python 3.7 or newer: https://www.python.org/downloads/
 
-I recommend installing both Python and .NET via Visual Studio, even if you're not planning to be using their IDE. 
-It's just going to save you some troubleshooting (I've struggled for days with bugs and inconveniences). 
-Go to this link, it should start the download: https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16
-When that is done, open up the installer and select the .NET and Python workloads, it should just work.
-
-
-Alternatively, here is Python https://www.python.org/downloads/, and here is .NET Core 3.1 https://dotnet.microsoft.com/download/dotnet/3.1
+> Be sure not to have invalid characters in the path, as CMake considers e.g. "#" invalid.
 
 ## Setup Instructions
 

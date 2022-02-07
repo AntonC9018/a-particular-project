@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Anton"
+	],
+	"copyright": "Copyright © 2022, Anton",
+	"dependencies": {
+		"acd-versions": "~>1.0.3"
+	},
+	"description": "The development CLI of a particular project",
+	"license": "MIT",
+	"name": "dev_cli"
+}
