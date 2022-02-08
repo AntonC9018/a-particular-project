@@ -19,3 +19,4 @@ meson-logs
 meson-private
 compile_commands.json
 build.ninja
+lib

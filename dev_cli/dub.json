@@ -3,10 +3,22 @@
 		"Anton"
 	],
 	"copyright": "Copyright © 2022, Anton",
+	"workingDirectory": ".",
+	"targetPath": "build/dev",
 	"dependencies": {
 		"acd-versions": "~>1.0.3"
 	},
 	"description": "The development CLI of a particular project",
 	"license": "MIT",
-	"name": "dev_cli"
+	"name": "dev_cli",
+	"targetType": "executable",
+	"configurations": [
+		{
+			"name": "cli",
+			"versions": ["MainStuff"]
+		},
+		{
+			"name": "get_deps"
+		}
+	]
 }
