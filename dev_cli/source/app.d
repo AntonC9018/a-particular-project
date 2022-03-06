@@ -72,6 +72,13 @@ int main(string[] args)
             return 1;
         }
 
+        case "dstep-run":
+        {
+            import jcli;
+            import get_deps.run_dstep;
+            return executeSingleCommand!RunDStep(args[2 .. $]);
+        }
+
 		version (MainStuff)
         {
             case "gitPrecommitHook":
