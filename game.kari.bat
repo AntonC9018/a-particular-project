@@ -1,0 +1,1 @@
+Kari\build_folder\bin\Kari.Generator\Debug\net6.0\Kari.Generator.exe -configurationFile game.kari.json

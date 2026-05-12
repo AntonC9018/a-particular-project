@@ -28,6 +28,7 @@ UNITY_ASSETS_DIRECTORY = None    # /Game/Assets
 KARI_PROJECT_PATH = None         # /Kari
 KARI_SOURCE_PATH = None          # /Kari/source
 KARI_PLUGINS_PATH = None         # /Kari/source/Kari.Plugins
+KARI_OUTPUT_PATH = None
 
 def set_global_and_env(name, value):
     globals()[name] = value
@@ -169,9 +170,10 @@ def kari():
     set_global("KARI_PROJECT_PATH", os.path.join(PROJECT_DIRECTORY, "Kari"))
     set_global("KARI_SOURCE_PATH", os.path.join(KARI_PROJECT_PATH, "source"))
     set_global("KARI_PLUGINS_PATH", os.path.join(KARI_SOURCE_PATH, "Kari.Plugins"))
-    set_global("KARI_GENERATOR_PATH", os.path.join(MSBUILD_OUTPUT_PATH, "Kari.Generator", "Release", "netcoreapp3.1", "publish", "kari.exe"))
+    set_global("KARI_OUTPUT_PATH", os.path.join(KARI_PROJECT_PATH, "build_folder", "bin"))
+    set_global("KARI_GENERATOR_PATH", os.path.join(KARI_OUTPUT_PATH, "Kari.Generator", "Release", "net6.0", "publish", "Kari.Generator.exe"))
     set_global("KARI_PLUGIN_NAMES", [directory for directory in os.listdir(KARI_PLUGINS_PATH) 
-        if os.path.isdir(os.path.join(KARI_PLUGINS_PATH, directory))])
+        if os.path.isdir(os.path.join(KARI_PLUGINS_PATH, directory)) and directory.find(".Tests") < 0])
 
 @kari.command("build")
 @click.option("-clean", is_flag=True, help="Whether to nuke all previous output before recompiling")
@@ -318,19 +320,18 @@ def generate_with_kari(rebuild, unprocessed_args):
 def generate_code_for_unity():
     """Generates code for the unity project """
 
-    plugin_path = MSBUILD_OUTPUT_PATH + "/{0}/Release/netcoreapp3.1/Kari.Plugins.{0}.dll"
+    plugin_path = KARI_OUTPUT_PATH + "/{0}/Release/net6.0/Kari.Plugins.{0}.dll"
     plugins = ",".join([plugin_path.format(p) for p in KARI_PLUGIN_NAMES])
 
     # TODO: maybe generate in a single file to minimize .meta's, which is possible
     return generate_with_kari.callback(
         rebuild=False, 
         unprocessed_args=
-        [   "-input", quote(os.path.join(UNITY_ASSETS_DIRECTORY, "Source")), 
-            "-pluginsLocations", quote(plugins),
+        [   "-inputFolder", quote(os.path.join(UNITY_ASSETS_DIRECTORY, "Source")), 
+            "-pluginPaths", quote(plugins),
             "-generatedName", "Generated",
             "-rootNamespace", "SomeProject",
-            "-commonNamespace", "Common",
-            "-clearOutput",
+            "-commonProjectName", "Common",
             "-terminalProject", "CommandTerminal",
             "-engineCommon", "EngineCommon"
         ])

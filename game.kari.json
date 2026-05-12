@@ -1,0 +1,15 @@
+{
+    "inputFolder": "Game/Assets/Source",
+    "pluginConfigFilePath": "kari_plugins/packages.game.config",
+    "generatedNamespaceSuffix": "Generated",
+    "rootNamespace": "SomeProject",
+    "outputMode": "NestedDirectory",
+    "inputMode": "UnityAsmdefs",
+    "commonProjectName": "Common",
+
+    // UnityHelpers
+    "engineCommon": "EngineCommon",
+
+    // Terminal
+    "terminalProject": "CommandTerminal"
+}

@@ -8,7 +8,7 @@
         "**/*.user":true,
         "**/*.userprefs":true,
         "**/*.unityproj":true,
-        "**/*.exe":true,
+        "**/*.exe":false,
         "**/*.pdf":true,
         "**/*.mid":true,
         "**/*.midi":true,
@@ -47,5 +47,18 @@
         "Assets/Temp/":true,
         "Assets/Library/":true,
         "Assets/library/":true
+    },
+    "files.associations": {
+        "*.uxml": "xml",
+        "*.meta": "yaml",
+        "*.uss": "css",
+        "*.tt": "t4",
+        "*.prefab": "yaml",
+        "*.asset": "yaml",
+        "*.dwlt": "yaml",
+        "*.json": "jsonc",
+        "common.h": "c",
+        "transport.h": "c",
+        "inttypes.h": "c"
     }
 }
