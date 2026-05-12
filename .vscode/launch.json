@@ -10,11 +10,11 @@
             "request": "launch",
             "preLaunchTask": "build_kari_debug",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/Build/bin/Kari.Generator/Debug/netcoreapp3.1/kari.exe",
+            "program": "${workspaceFolder}/Build/bin/Kari.Generator/Debug/net6.0/kari.exe",
             // "args": ["-input", "Kari/Kari.Test", "-output", "Kari/Kari.Test/Test.cs", "-rootNamespace", "Kari.Test", "-outputNamespace", "Kari.Test", "-writeAttributes", "false"],
             "args": [
                 "-input", "${workspaceFolder}/Game/Assets/Source", 
-                "-pluginsLocations", "${workspaceFolder}/Build/bin/Terminal/Debug/netcoreapp3.1/Kari.Plugins.Terminal.dll,${workspaceFolder}/Build/bin/Flags/Debug/netcoreapp3.1/Kari.Plugins.Flags.dll,${workspaceFolder}/Build/bin/DataObject/Debug/netcoreapp3.1/Kari.Plugins.DataObject.dll",
+                "-pluginsLocations", "${workspaceFolder}/Build/bin/Terminal/Debug/net6.0/Kari.Plugins.Terminal.dll,${workspaceFolder}/Build/bin/Flags/Debug/net6.0/Kari.Plugins.Flags.dll,${workspaceFolder}/Build/bin/DataObject/Debug/net6.0/Kari.Plugins.DataObject.dll",
                 "-generatedName", "Generated",
                 "-rootNamespace", "SomeProject",
                 "-commonNamespace", "Common",
@@ -34,7 +34,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build_kari_sandbox",
-            "program": "${workspaceFolder}/Build/bin/Kari.Test/Debug/netcoreapp3.1/Kari.Test.dll",
+            "program": "${workspaceFolder}/Build/bin/Kari.Test/Debug/net6.0/Kari.Test.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "externalTerminal",
